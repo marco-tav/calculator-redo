@@ -1,99 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Web Calculator</title>
-        <script src='scripts/script.js' defer></script>
-        <link rel='stylesheet' href='styles/style.css'>
-    </head>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Calculator</title>
+    <script src='scripts/script.js' defer></script>
+    <link rel='stylesheet' href='styles/style.css'>
+  </head>
     
-    <body>
-        <div class="calculator-body">
-            <div class="screen-container">     
-                <div class="screen">
-                    <p id="numbers"></p>
-                </div>
-                <div class="info">
-                    <h1 class="title">Web Calculator</h1>
-                    <p class="author">by marcotav</p>
-                </div>
-            </div>
-            <div class="keyboard-container">
-                <!--First row of buttons-->
-                <div class="button-row">
-                    <div class="button-div">
-                        <button type="button" class="button display" id="seven">7</button>
-                    </div>
-                    <div class="button-div">
-                        <button type="button" class="button display" id="eight">8</button>
-                    </div>
-                    <div class="button-div">
-                        <button type="button" class="button display" id="nine">9</button>
-                    </div>
-                    <div class="button-div">
-                        <button type="button" class="button" id="del">DEL</button>
-                    </div>
-                    <div class="button-div">
-                        <button type="button" class="button" id="ac">AC</button>
-                    </div>
-                </div>
-
-                <!--Second row of buttons-->
-                <div class="button-row">
-                    <div class="button-div">
-                        <button type="button" class="button display" id="four">4</button>
-                    </div>
-                    <div class="button-div">
-                        <button type="button" class="button display" id="five">5</button>
-                    </div>
-                    <div class="button-div">
-                        <button type="button" class="button display" id="six">6</button>
-                    </div>
-                    <div class="button-div">
-                        <button type="button" class="button operator" id="product">x</button>
-                    </div>
-                    <div class="button-div">
-                        <button type="button" class="button operator" id="division">/</button>
-                    </div>
-                </div>
-
-                <!--Third row of buttons-->
-                <div class="button-row">
-                    <div class="button-div">
-                        <button type="button" class="button display" id="one">1</button>
-                    </div>
-                    <div class="button-div">
-                        <button type="button" class="button display" id="two">2</button>
-                    </div>
-                    <div class="button-div">
-                        <button type="button" class="button display" id="three">3</button>
-                    </div>
-                    <div class="button-div">
-                        <button type="button" class="button operator" id="add">+</button>
-                    </div>
-                    <div class="button-div">
-                        <button type="button" class="button operator" id="minus">-</button>
-                    </div>
-                </div>
-
-                <!--Fourth row of buttons-->
-                <div class="button-row">
-                    <div class="button-div">
-                        <button type="button" class="button display" id="zero">0</button>
-                    </div>
-                    <div class="button-div">
-                        <button type="button" class="button" id="dot">.</button>
-                    </div>
-                    <div class="button-div">
-                        <button type="button" class="button" id="sign">+/-</button>
-                    </div>
-                    <div class="button-div">
-                        <button type="button" class="button" id="equal">=</button>
-                    </div>
-                </div>
-            </div>
+  <body>
+    <div class="calculator-body">
+      <div class="screen-container">     
+        <div class="screen">
+          <p id="numbers"></p>
         </div>
-    </body>
+        <div class="info">
+          <h1 class="title">Web Calculator</h1>
+          <p class="author">by marcotav</p>
+        </div>
+      </div>
+      
+      <div class="keyboard-container">
+        <!--First row of buttons-->
+        <div class="button-row">
+          <div class="button-div">
+            <button type="button" class="button display" id="seven">7</button>
+          </div>
+          <div class="button-div">
+            <button type="button" class="button display" id="eight">8</button>
+          </div>
+          <div class="button-div">
+            <button type="button" class="button display" id="nine">9</button>
+          </div>
+          <div class="button-div">
+            <button type="button" class="button" id="del">DEL</button>
+          </div>
+          <div class="button-div">
+            <button type="button" class="button" id="ac">AC</button>
+          </div>
+        </div>
+
+        <!--Second row of buttons-->
+        <div class="button-row">
+          <div class="button-div">
+            <button type="button" class="button display" id="four">4</button>
+          </div>
+          <div class="button-div">
+            <button type="button" class="button display" id="five">5</button>
+          </div>
+          <div class="button-div">
+            <button type="button" class="button display" id="six">6</button>
+          </div>
+          <div class="button-div">
+            <button type="button" class="button operator" id="product">x</button>
+          </div>
+          <div class="button-div">
+            <button type="button" class="button operator" id="division">/</button>
+          </div>
+        </div>
+
+        <!--Third row of buttons-->
+        <div class="button-row">
+          <div class="button-div">
+            <button type="button" class="button display" id="one">1</button>
+          </div>
+          <div class="button-div">
+            <button type="button" class="button display" id="two">2</button>
+          </div>
+          <div class="button-div">
+            <button type="button" class="button display" id="three">3</button>
+          </div>
+          <div class="button-div">
+            <button type="button" class="button operator" id="add">+</button>
+          </div>
+          <div class="button-div">
+            <button type="button" class="button operator" id="minus">-</button>
+          </div>
+        </div>
+
+        <!--Fourth row of buttons-->
+        <div class="button-row">
+          <div class="button-div">
+                <button type="button" class="button display" id="zero">0</button>
+          </div>
+          <div class="button-div">
+                <button type="button" class="button" id="dot">.</button>
+          </div>
+          <div class="button-div">
+                <button type="button" class="button" id="sign">+/-</button>
+          </div>
+          <div class="button-div">
+                <button type="button" class="button" id="equal">=</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
