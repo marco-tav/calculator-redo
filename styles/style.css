@@ -1,0 +1,139 @@
+@font-face {
+  font-family: "Orbitron";
+  src: url('../fonts/Orbitron/Orbitron-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: "DSEG14 Classic";
+  src: url('../fonts/fonts-DSEG_v046/DSEG14-Classic/DSEG14Classic-Italic.ttf');
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cccbc4;
+  height: 100vh;
+  font-family: "Orbitron";
+}   
+
+.calculator-body {
+  height: 500px;
+  width: 650px;
+  background-color: #283554;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.screen-container {
+  display: flex;
+}
+
+.screen {
+  background-color: #6b876d;
+  height: 120px;
+  width: 450px;
+  margin: 25px;
+  border: 0px solid black;
+  border-radius: 10px;
+}
+
+#numbers {
+  font-family: "DSEG14 Classic";
+  font-size: 25px;
+  width: 398px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 10px;
+  overflow-wrap: break-word;
+}
+
+.info {
+  height: 120px;
+  width: 200px;
+  margin: 25px;
+  margin-left: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.title {
+  font-size: 30px;
+  color: #e6e6e6;
+}
+
+.author {
+  font-size: 15px;
+  color: #e36d94;
+  margin-top: auto;
+}
+
+.keyboard-container {
+  display: flex;
+  flex-direction: column;
+  width: 650px;
+  height: 330px;
+  padding: 8px;
+  padding-top: 0px;
+  margin-bottom: 10px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex: 1 1 auto;
+}
+
+.button-div {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  width: 90px;
+  height: 50px;
+  background-color: #e6e6e6;
+  border: 0;
+  border-radius: 5px;
+  font-size: 18px;
+  font-family: "Orbitron";
+}
+
+.button:hover {
+  background-color: #dbdbdb;
+}
+
+.button:active {
+  background-color: #cfcfcf;
+}
+
+#del,
+#ac {
+  background-color: #4256db;
+  color: white;
+}
+
+#del:hover,
+#ac:hover {
+  background-color: #3c4fc9;
+}
+
+#del:active,
+#ac:active {
+  background-color: #394ab8;
+}
+
+#equal {
+  width: 218px;
+}
