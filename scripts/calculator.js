@@ -63,15 +63,21 @@ const display = document.getElementById("display");
 
 
 numberButtons.forEach(button => button.addEventListener("click", (e) => {
-
+  displayButtonContent(e.target.innerText, display, operation);
+  operation.aux += e.target.innerText;
 }));
 
 operatorButtons.forEach(opButton => opButton.addEventListener("click", (e) => {
-
+  displayButtonContent(e.target.innerText, display, operation);
+  operation.firstOperand = operation.aux;
+  operation.aux = "";
+  operation.operator = e.target.innerText;
 }));
 
 equalButton.addEventListener("click", (e) => {
-
+  operation.secondOperand = operation.aux;
+  operation.result = operate(operation.firstOperand, operation.secondOperand, operation.operator);
+  display.innerText = operation.result;
 });
 
 clearButton.addEventListener("click", () => {
