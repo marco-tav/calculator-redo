@@ -12,7 +12,7 @@ function multiply(num1, num2) {
 }
 
 function divide(num1, num2) {
-  return num2 === 0 ? "The calculator exploded" : Math.round((+num1 / +num2)*100)/100;
+  return num2 === "0" ? "The calculator exploded" : Math.round((+num1 / +num2)*100)/100;
 }
 
 function operate(num1, num2, operator) {
@@ -76,9 +76,11 @@ operatorButtons.forEach(opButton => opButton.addEventListener("click", (e) => {
 
 equalButton.addEventListener("click", (e) => {
   operation.secondOperand = operation.aux;
-  operation.result = operate(operation.firstOperand, operation.secondOperand, operation.operator).toString();
-  display.innerText = operation.result;
-  operation.displayValue = operation.result;
+  if(operation.firstOperand && operation.secondOperand && operation.operator) {
+    operation.result = operate(operation.firstOperand, operation.secondOperand, operation.operator).toString();
+    display.innerText = operation.result;
+    operation.displayValue = operation.result;
+  }
 });
 
 clearButton.addEventListener("click", () => {
