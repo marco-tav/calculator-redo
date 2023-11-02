@@ -76,8 +76,9 @@ operatorButtons.forEach(opButton => opButton.addEventListener("click", (e) => {
 
 equalButton.addEventListener("click", (e) => {
   operation.secondOperand = operation.aux;
-  operation.result = operate(operation.firstOperand, operation.secondOperand, operation.operator);
+  operation.result = operate(operation.firstOperand, operation.secondOperand, operation.operator).toString();
   display.innerText = operation.result;
+  operation.displayValue = operation.result;
 });
 
 clearButton.addEventListener("click", () => {
