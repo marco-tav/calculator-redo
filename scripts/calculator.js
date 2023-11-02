@@ -68,13 +68,15 @@ numberButtons.forEach(button => button.addEventListener("click", (e) => {
 }));
 
 operatorButtons.forEach(opButton => opButton.addEventListener("click", (e) => {
-  displayButtonContent(e.target.innerText, display, operation);
   operation.firstOperand = operation.aux;
-  operation.aux = "";
-  operation.operator = e.target.innerText;
+  if(!(operation.displayValue.includes("+") || operation.displayValue.includes("-") || operation.displayValue.includes("x") || operation.displayValue.includes("/"))) {
+    displayButtonContent(e.target.innerText, display, operation);
+    operation.aux = "";
+    operation.operator = e.target.innerText;
+  }
 }));
 
-equalButton.addEventListener("click", (e) => {
+equalButton.addEventListener("click", () => {
   operation.secondOperand = operation.aux;
   if(operation.firstOperand && operation.secondOperand && operation.operator) {
     operation.result = operate(operation.firstOperand, operation.secondOperand, operation.operator).toString();
