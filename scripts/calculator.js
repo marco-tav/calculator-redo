@@ -29,29 +29,22 @@ function operate(num1, num2, operator) {
 
 function displayButtonContent(buttonContent, display, operation) {
   display.innerText += buttonContent;
-  operation.displayValue += buttonContent;
 }
 
 function clearCalc(display, operation) {
   display.innerText = "";
-  operation.displayValue = "";
-  operation.aux = "";
   operation.firstOperand = "";
   operation.secondOperand = "";
   operation.operator = "";
-  operation.result = "";
 }
 
 
 /*---------------------- Main Program --------------------------*/
 
 const operation = {
-  displayValue: "",
-  aux: "",
   firstOperand: "",
   secondOperand: "",
   operator: "",
-  result: "",
 };
 
 const numberButtons = document.querySelectorAll(".number");
@@ -63,26 +56,15 @@ const display = document.getElementById("display");
 
 
 numberButtons.forEach(button => button.addEventListener("click", (e) => {
-  displayButtonContent(e.target.innerText, display, operation);
-  operation.aux += e.target.innerText;
+
 }));
 
 operatorButtons.forEach(opButton => opButton.addEventListener("click", (e) => {
-  operation.firstOperand = operation.aux;
-  if(!(operation.displayValue.includes("+") || operation.displayValue.includes("-") || operation.displayValue.includes("x") || operation.displayValue.includes("/"))) {
-    displayButtonContent(e.target.innerText, display, operation);
-    operation.aux = "";
-    operation.operator = e.target.innerText;
-  }
+
 }));
 
 equalButton.addEventListener("click", () => {
-  operation.secondOperand = operation.aux;
-  if(operation.firstOperand && operation.secondOperand && operation.operator) {
-    operation.result = operate(operation.firstOperand, operation.secondOperand, operation.operator).toString();
-    display.innerText = operation.result;
-    operation.displayValue = operation.result;
-  }
+
 });
 
 clearButton.addEventListener("click", () => {

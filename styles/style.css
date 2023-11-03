@@ -137,3 +137,7 @@ body {
 #equal {
   width: 218px;
 }
+
+#unavailable {
+  background-color: gray;
+}
