@@ -27,8 +27,8 @@ function operate(num1, num2, operator) {
   }
 }
 
-function displayButtonContent(buttonContent, display) {
-  display.innerText += buttonContent;
+function displayData(data, display) {
+  display.innerText += data;
 }
 
 function clearCalc(display, operation) {
