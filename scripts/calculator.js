@@ -27,7 +27,7 @@ function operate(num1, num2, operator) {
   }
 }
 
-function displayButtonContent(buttonContent, display, operation) {
+function displayButtonContent(buttonContent, display) {
   display.innerText += buttonContent;
 }
 
