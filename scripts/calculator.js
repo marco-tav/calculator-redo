@@ -27,6 +27,10 @@ function operate(num1, num2, operator) {
   }
 }
 
+function resetDisplay(display) {
+  display.innerText = "";
+}
+
 function displayData(data, display) {
   display.innerText += data;
 }
@@ -56,7 +60,13 @@ const display = document.getElementById("display");
 
 
 numberButtons.forEach(button => button.addEventListener("click", (e) => {
-
+  if (operation.operator === "") {
+    displayData(e.target.innerText, display);
+    operation.firstOperand += e.target.innerText;
+  } else if (operation.operator !== "") {
+    displayData(e.target.innerText, display);
+    operation.secondOperand += e.target.innerText;
+  }
 }));
 
 operatorButtons.forEach(opButton => opButton.addEventListener("click", (e) => {
