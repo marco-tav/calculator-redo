@@ -70,11 +70,19 @@ numberButtons.forEach(button => button.addEventListener("click", (e) => {
 }));
 
 operatorButtons.forEach(opButton => opButton.addEventListener("click", (e) => {
-
+  displayData(e.target.innerText, display);
+  operation.operator = e.target.innerText;
 }));
 
 equalButton.addEventListener("click", () => {
-
+  if (operation.firstOperand !== "" && operation.secondOperand !== "" & operation.operator !== "") {
+    let result = operate(operation.firstOperand, operation.secondOperand, operation.operator);
+    resetDisplay(display);
+    displayData(result, display);
+    operation.firstOperand = result;
+    operation.secondOperand = "";
+    operation.operator = "";
+  }
 });
 
 clearButton.addEventListener("click", () => {
