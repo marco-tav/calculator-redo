@@ -70,12 +70,12 @@ numberButtons.forEach(button => button.addEventListener("click", (e) => {
 }));
 
 operatorButtons.forEach(opButton => opButton.addEventListener("click", (e) => {
-  displayData(e.target.innerText, display);
-  operation.operator = e.target.innerText;
+
 }));
 
 equalButton.addEventListener("click", () => {
-  if (operation.firstOperand !== "" && operation.secondOperand !== "" & operation.operator !== "") {
+  let operationIsDefined = operation.firstOperand !== "" && operation.secondOperand !== "" && operation.operator !== "";
+  if (operationIsDefined) {
     let result = operate(operation.firstOperand, operation.secondOperand, operation.operator);
     resetDisplay(display);
     displayData(result, display);
