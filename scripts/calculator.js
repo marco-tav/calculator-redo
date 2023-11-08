@@ -42,6 +42,12 @@ function clearCalc(display, operation) {
   operation.operator = "";
 }
 
+function updateWithResult(operation, operator, result) {
+  operation.firstOperand = result;
+  operation.secondOperand = "";
+  operation.operator = operator;
+}
+
 
 /*---------------------- Main Program --------------------------*/
 
@@ -77,9 +83,7 @@ operatorButtons.forEach(opButton => opButton.addEventListener("click", (e) => {
     resetDisplay(display);
     displayData(result, display);
     displayData(e.target.innerText, display);
-    operation.firstOperand = result;
-    operation.secondOperand = "";
-    operation.operator = e.target.innerText;
+    updateWithResult(operation, e.target.innerText, result);
   } else if(operation.firstOperand && !operation.operator) {
     displayData(e.target.innerText, display);
     operation.operator = e.target.innerText;
@@ -93,9 +97,7 @@ equalButton.addEventListener("click", () => {
     let result = operate(operation.firstOperand, operation.secondOperand, operation.operator);
     resetDisplay(display);
     displayData(result, display);
-    operation.firstOperand = result;
-    operation.secondOperand = "";
-    operation.operator = "";
+    updateWithResult(operation, "", result);
   }
 });
 
