@@ -70,11 +70,25 @@ numberButtons.forEach(button => button.addEventListener("click", (e) => {
 }));
 
 operatorButtons.forEach(opButton => opButton.addEventListener("click", (e) => {
+  let operationIsDefined = operation.firstOperand !== "" && operation.secondOperand !== "" && operation.operator !== "";
 
+  if(operationIsDefined) {
+    let result = operate(operation.firstOperand, operation.secondOperand, operation.operator);
+    resetDisplay(display);
+    displayData(result, display);
+    displayData(e.target.innerText, display);
+    operation.firstOperand = result;
+    operation.secondOperand = "";
+    operation.operator = e.target.innerText;
+  } else if(operation.firstOperand && !operation.operator) {
+    displayData(e.target.innerText, display);
+    operation.operator = e.target.innerText;
+  }
 }));
 
 equalButton.addEventListener("click", () => {
   let operationIsDefined = operation.firstOperand !== "" && operation.secondOperand !== "" && operation.operator !== "";
+  
   if (operationIsDefined) {
     let result = operate(operation.firstOperand, operation.secondOperand, operation.operator);
     resetDisplay(display);
